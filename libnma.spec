@@ -88,16 +88,22 @@ Header files for development with nma.
 %doc AUTHORS NEWS
 %license COPYING
 %{_libdir}/libnma.so.%{major_nma}{,.*}
+%{_libdir}/libnma-gtk4.so.%{major_nma}{,.*}
 
 %files -n %{libnma_gir}
 %{_libdir}/girepository-1.0/NMA-%{major_gir}.typelib
+%{_libdir}/girepository-1.0/NMA4-%{major_gir}.typelib
 
 %files -n %{libnma_devel}
 %doc %{_datadir}/gtk-doc/html/%{name}/
 %dir %{_includedir}/libnma
 %{_includedir}/libnma/nma-*.h
 %{_libdir}/pkgconfig/libnma.pc
+%{_libdir}/pkgconfig/libnma-gtk4.pc
 %{_libdir}/libnma.so
 %{_datadir}/gir-1.0/NMA-1.0.gir
+%{_datadir}/gir-1.0/NMA4-1.0.gir
 %{_datadir}/vala/vapi/libnma.deps
 %{_datadir}/vala/vapi/libnma.vapi
+%{_datadir}/vala/vapi/libnma-gtk4.deps
+%{_datadir}/vala/vapi/libnma-gtk4.vapi
