@@ -101,6 +101,7 @@ Header files for development with nma.
 %{_libdir}/pkgconfig/libnma.pc
 %{_libdir}/pkgconfig/libnma-gtk4.pc
 %{_libdir}/libnma.so
+%{_libdir}/libnma-gtk4.so
 %{_datadir}/gir-1.0/NMA-1.0.gir
 %{_datadir}/gir-1.0/NMA4-1.0.gir
 %{_datadir}/vala/vapi/libnma.deps
