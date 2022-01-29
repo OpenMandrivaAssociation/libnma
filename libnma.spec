@@ -2,14 +2,16 @@
 
 %define major_nma	0
 %define libnma		%mklibname nma %{major_nma}
+%define libnmagtk4	%mklibname nma-gtk4 %{major_nma}
 %define libnma_gir	%mklibname nma-gir %{major_gir}
+%define libnmagtk4_gir	%mklibname nma-gtk4-gir %{major_gir}
 %define libnma_devel	%mklibname nma -d
 
 %define url_ver		%(echo %{version} | cut -d "." -f -2)
 
 Name:		libnma
 Version:	1.8.34
-Release:	1
+Release:	2
 Summary:	Shared library for NetworkManager-applet
 License:	GPLv2+
 Group:		System/Libraries
@@ -56,11 +58,35 @@ GObject Introspection interface description for NMA.
 
 #------------------------------------------------
 
+%package -n	%{libnmagtk4}
+Summary:	Shared library for NetworkManager-applet for gtk 4.x
+Group:		System/Libraries
+Requires:	%{name} >= %{version}-%{release}
+Requires:	mobile-broadband-provider-info
+
+%description -n	%{libnmagtk4}
+This private package contains the libnma libraries.
+
+#------------------------------------------------
+
+%package -n	%{libnmagtk4_gir}
+Summary:	GObject Introspection interface description for NMA for gtk 4.x
+Group:		System/Libraries
+Requires:	%{libnma} = %{version}-%{release}
+
+%description -n %{libnmagtk4_gir}
+GObject Introspection interface description for NMA.
+
+
+#------------------------------------------------
+
 %package -n	%{libnma_devel}
 Summary:	Development files for nma
 Group:		Development/C++
 Requires:	%{libnma} = %{version}-%{release}
 Requires:	%{libnma_gir} = %{version}-%{release}
+Requires:	%{libnmagtk4} = %{version}-%{release}
+Requires:	%{libnmagtk4_gir} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	nma-devel = %{version}-%{release}
 
@@ -88,10 +114,14 @@ Header files for development with nma.
 %doc AUTHORS NEWS
 %license COPYING
 %{_libdir}/libnma.so.%{major_nma}{,.*}
+
+%files -n %{libnmagtk4}
 %{_libdir}/libnma-gtk4.so.%{major_nma}{,.*}
 
 %files -n %{libnma_gir}
 %{_libdir}/girepository-1.0/NMA-%{major_gir}.typelib
+
+%files -n %{libnmagtk4_gir}
 %{_libdir}/girepository-1.0/NMA4-%{major_gir}.typelib
 
 %files -n %{libnma_devel}
