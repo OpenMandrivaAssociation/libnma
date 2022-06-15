@@ -10,7 +10,7 @@
 %define url_ver		%(echo %{version} | cut -d "." -f -2)
 
 Name:		libnma
-Version:	1.8.38
+Version:	1.8.40
 Release:	1
 Summary:	Shared library for NetworkManager-applet
 License:	GPLv2+
