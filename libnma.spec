@@ -10,7 +10,7 @@
 %define url_ver		%(echo %{version} | cut -d "." -f -2)
 
 Name:		libnma
-Version:	1.8.40
+Version:	1.10.2
 Release:	1
 Summary:	Shared library for NetworkManager-applet
 License:	GPLv2+
@@ -21,7 +21,7 @@ Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version
 BuildRequires:	gtk-doc
 BuildRequires:	meson
 BuildRequires:	pkgconfig(gck-1) >= 3.14
-BuildRequires:	pkgconfig(gcr-3) >= 3.14
+BuildRequires:	pkgconfig(gcr-4)
 BuildRequires:	pkgconfig(gio-2.0) >= 2.38
 BuildRequires:	pkgconfig(gmodule-export-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 0.9.6
