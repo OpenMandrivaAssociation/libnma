@@ -109,6 +109,7 @@ Header files for development with nma.
 
 %files -f %{name}.lang
 %{_datadir}/glib-2.0/schemas/org.gnome.nm-applet.gschema.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.nm-applet.eap.gschema.xml
 
 %files -n %{libnma}
 %doc AUTHORS NEWS
