@@ -11,7 +11,7 @@
 
 Name:		libnma
 Version:	1.10.6
-Release:	8
+Release:	9
 Summary:	Shared library for NetworkManager-applet
 License:	GPLv2+
 Group:		System/Libraries
